@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#pragma warning(disable:4996)
+
 
 // 노드 정의
 typedef struct node {
@@ -51,7 +53,8 @@ int main() {
     scanf("%d", &N);
     getchar();  // 줄바꿈 소비
 
-    char line[110];  // 괄호 문자열 최대 길이 제한
+    char line[2000];  // 괄호 문자열 최대 길이 제한 2000
+    
     for (int i = 0; i < N; i++) {
         fgets(line, sizeof(line), stdin);
 

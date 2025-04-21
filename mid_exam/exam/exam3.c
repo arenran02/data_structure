@@ -87,14 +87,20 @@ int main() {
     for (int i=0; i<N; i++){
         scanf("%d", &comm);
 
-        // 줄을 섰을 때
+        // 줄을 섰을 때 id를 큐에 push
         if (comm==1){
             scanf("%d", &id);
             push(&q, id);
 
             if (max_size<=q.size) {
                 
-                if (max_id<back(&q)){
+                // 최대 인원이 같은 경우우 max 아이디 업데이트
+                if (max_size==q.size&&max_id<back(&q)){
+                    max_id=back(&q);
+                }
+                
+                // 역대 최대 인원일 경우 id 업데이트
+                if (max_size<q.size){
                     max_id=back(&q);
                 }
                 
@@ -102,7 +108,7 @@ int main() {
             }
         }
 
-        // 사람이 빠졌을 때
+        // 사람이 빠졌을 때 맨 앞에서 pop
         else if (comm==2){
             pop(&q);
         }

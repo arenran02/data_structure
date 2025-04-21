@@ -49,7 +49,7 @@ void insertAtIndex(Node** head, int index, int data) {
 // 인덱스 위치의 노드 삭제
 void deleteAtIndex(Node** head, int index) {
     if (*head == NULL) {
-        printf("리스트가 비어있습니다\n");
+        // printf("리스트가 비어있습니다\n");
         return;
     }
 
